@@ -1,0 +1,149 @@
+<div id="content">
+	<form name="formColaborador" ng-submit="vm.salvar()">
+		<div class=" form-group pull-right">
+			<button class="btn btn-primary btn-md" data-toggle="modal"
+				type="submit">
+				<i class="fa  fa-check"> </i> {{getWord('label.salvar')}}
+			</button>
+		</div>
+		<br />
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="well well-sm">
+					<div class="row">
+						<div class="col-sm-12 col-md-12 col-lg-12">
+							<div class="well well-light well-sm no-margin no-padding">
+								<div class="row">
+									<div class="col-sm-12">
+										<div class="row">
+											<div class="col-sm-3 profile-pic">
+												<img src="build/img/avatars/interrogacao.png" alt="demo user">
+											</div>
+											<div class="col-sm-6">
+												<br />
+												<div class=" form-group">
+													<input class="form-control" id="nome"
+														placeholder="{{getWord('label.nomeCompleto')}}" required name="name"
+														ng-model="vm.colaborador.nome" type="text">
+												</div>
+
+												<div class="form-group">
+													<div class="input-group">
+								                        <span class="input-group-addon">
+								                        <i class="{{vm.classeCargo}}"></i></span>
+														<select class="form-control" name="cargo" id="cargo"
+															ng-model="vm.colaborador.idCargo" required
+															ng-change="vm.recuperarClasseCargo(vm.colaborador.idCargo)"
+															ng-options="cargo.id as cargo.descricao for cargo in vm.cargos | orderBy:'descricao'">
+															<option value="">{{getWord('label.selecioneUmCargo')}}</option>
+														</select>
+								                    </div>
+												                    
+												</div>
+												<div class="form-group">
+													<div class="input-group">
+								                        <span class="input-group-addon">
+								                        <i class="{{vm.classeDepartamento}}"></i></span>
+														<select class="form-control" name="cargo" id="cargo"
+															ng-model="vm.colaborador.idDepartamento" required
+															ng-change="vm.recuperarClasseDepartamento(vm.colaborador.idDepartamento)"
+															ng-options="departamento.id as departamento.descricao for departamento in vm.departamentos | orderBy:'descricao'">
+															<option value="">{{getWord('label.selecioneUmDepartamento')}}</option>
+														</select>
+								                    </div>
+													
+												</div>
+
+												<div class="row">
+													<hr size="80">
+												</div>
+
+												<div class="form-group">
+													<textarea rows="5" class="form-control"
+														ng-model="vm.colaborador.descricao" name="descricao"
+														id="descricao" required placeholder="Descreva-se">
+											   </textarea>
+												</div>
+
+											    <div class="form-group">
+												    <h4>{{getWord('label.competencias')}}</h4>
+												    <br >
+												    <ui-select class="form-control form-control" multiple tagging tagging-label="Inserir uma nova competência" ng-model="vm.colaborador.competencias" theme="bootstrap" title="Inserir sua competência">
+												      <ui-select-match class="ui-select-match" placeholder="Inserir sua competência">{{$item.descricao}}</ui-select-match>
+												      <ui-select-choices class="ui-select-choices" repeat="competencia in vm.competenciasDisponiveis | filter : $select.search">
+												        {{competencia.descricao}}
+												      </ui-select-choices>
+												    </ui-select>
+												  </div>
+ 												<br >
+												<div class="form-group">
+													<div class="col-sm-6 col-md-6 col-lg-6">
+														<h4>{{getWord('label.contatos')}}</h4>
+													</div>
+													<div class="col-sm-6 col-md-6 col-lg-6">
+														<div class=" form-group pull-right">
+															<div class="form-group has-feedback">
+																<input type="button"
+																	class="form-control btn btn-primary btn-md"
+																	value="Novo" ng-click="vm.adicionarContato()" />
+															</div>
+														</div>
+													</div>
+													<br>
+													<table class="table table-hover">
+														<tbody>
+															<tr ng-repeat="contato in vm.colaborador.contatos">
+																<td>
+																	<div class="input-group">
+												                        <span class="input-group-addon">
+												                        <i class="{{vm.recuperarTipoContato(contato.tipo)}}" ng-if="vm.colaborador.id"></i>
+												                        <i class="{{contato.tipo.classe}}" ng-if="!vm.colaborador.id"></i></span>
+												                        <select  class="form-control" name="cargo"
+																			id="tipoContato" ng-model="contato.tipo" required
+																			ng-options="tipoContato as tipoContato.descricao for tipoContato in vm.tiposContatos | orderBy:'descricao'">
+																			<option value="">{{getWord('label.selecioneUmTipoDeContato')}}</option>
+																		</select>
+												                    </div>
+																</td>
+																<td><input class="form-control"
+																	placeholder="Coloque aqui o contato" required
+																	ng-model="contato.descricao" type="text"></td>
+																<td>
+																	<button type="button" class="pull-right fa fa-times"
+																		ng-click="vm.excluirContato(contato)"></button>
+																</td>
+															</tr>
+														</tbody>
+													</table>
+
+												</div>
+												  <div class="form-group" style="height: 400px">
+												  
+												  <div class="input-group">
+								                        <span class="input-group-addon"><i class="fa fa-map-marker"></i></span>
+								                        <input places-auto-complete 
+								                        		size=80
+								                        		class="form-control"
+								                        		on-place-changed="vm.placeChanged()" 
+								                        	    required
+												          	    id="endereco" 
+												          	    placeholder="Coloque seu endereço" 
+												          	    name="endereco"
+												          	    ng-model="vm.colaborador.endereco" 
+												          	   types="['address']">
+								                    </div>
+												  <br/>
+												  <ng-map center="[-15.8005269,-47.8660129]"></ng-map>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</form>
+</div>

@@ -1,0 +1,80 @@
+<div id="content">
+	<form name="formColaborador" ng-submit="vm.salvar()">
+		<br />
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="well well-sm">
+					<div class="row form-group">
+						<div class="col-sm-6">
+							<h1>{{getWord('label.colaboradores')}}</h1>
+						</div>
+						<div class="col-sm-6">
+							<a class="glyphicon glyphicon-plus btn btn-primary"
+								ng-href="#/colaborador/" style="float: right"> {{getWord('label.novo')}} </a>
+						</div>
+					</div>
+
+					<div class="input-group">
+						<input class="form-control" type="text" placeholder="Pesquisar..." meu-enter="vm.pesquisar()" ng-model="vm.termoDeBusca">
+						<div class="input-group-btn">
+							<button class="btn btn-default btn-primary" type="button" ng-click="vm.pesquisar()">
+								<i class="fa fa-search"></i>
+							</button>
+						</div>
+					</div>
+
+					<div class="row">
+						<hr size="80">
+					</div>
+					
+					<div class="row">
+					<div class="col-sm-6 col-md-6 col-lg-6"
+						ng-repeat="colaborador in vm.colaboradores">
+						<!-- product -->
+						<div class="product-content product-wrap clearfix">
+							<div class="row">
+								<div class="col-md-5 col-sm-12 col-xs-12">
+									<img src="build/img/avatars/interrogacao.png"
+										class="img-responsive">
+								</div>
+								<div class="col-md-7 col-sm-12 col-xs-12">
+									<div>
+										<h5 class="name">
+											<a ng-href="#/visualizar/{{colaborador.id}}"> 
+											<h1>
+														<span class="semi-bold">&#xA0;&#xA0;&#xA0;{{colaborador.nome}}</span>
+									                </h1>
+											</a>
+										</h5>
+										<div>
+											<h1>
+							                    <small>&#xA0;&#xA0;&#xA0;&#xA0;{{colaborador.cargo.descricao}}</small>
+							                </h1>
+										</div>
+										<div>
+											<h1>
+							                    <small><i class="fa fa-lightbulb-o"></i>&#xA0;&#xA0;&#xA0;{{colaborador.departamento.descricao}}</small>
+							                </h1>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					</div>
+						<div class="row"  ng-show="!vm.paginacao.last" ng-show="!vm.paginacao.last">
+							<center>
+		                    	<a href-void class="btn btn-primary btn-circle btn-xl" ng-click="vm.carregarMaisItens()"><small>{{getWord('label.mais')}}</small> </a>
+							</center>
+						</div>
+						<div class="row" ng-show="vm.colaboradores.length < 1">
+							<center >
+								{{getWord('label.naoencontrouresultado')}}	
+							</center>
+						</div>
+			</div>
+			</div>
+
+		</div>
+	</form>
+</div>

@@ -1,0 +1,101 @@
+<div id="content">
+	<form name="formColaborador" ng-submit="vm.salvar()">
+		<div class=" form-group pull-right">
+			<a style="cursor: pointer; text-decoration: none !important;" class="fa fa-pencil fa-2x pull-right" title="Edit Collaborator" ng-href="#/colaborador/{{vm.colaborador.id}}" type="button"></a>
+    		<a style="cursor: pointer; text-decoration: none !important;" class="fa fa-trash-o fa-2x pull-right" ng-click="vm.excluir(vm.colaborador.id)" title="Excluir" type="button"></a>
+    		<a style="cursor: pointer; text-decoration: none !important;" class='fa fa-arrow-left fa-2x pull-right' ng-href='#/lista' title="Voltar" type="button"></a>
+		</div>
+		<br />
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="well well-sm">
+					<div class="row">
+						<div class="col-sm-12 col-md-12 col-lg-12">
+							<div class="well well-light well-sm no-margin no-padding">
+								<div class="row">
+									<div class="col-sm-12">
+										<div class="row">
+											<div class="col-sm-3 profile-pic">
+												<img src="build/img/avatars/interrogacao.png" alt="demo user">
+											</div>
+											<div class="col-sm-6">
+												<br />
+												<div class=" form-group">
+													<h1>
+														<span class="semi-bold">{{vm.colaborador.nome}}</span>
+													</h1>
+												</div>
+
+												<div class="form-group">
+													<h1>
+														<small><i class="{{vm.classeCargo}}"></i>&#xA0;&#xA0;&#xA0;&#xA0;<small>{{vm.colaborador.cargo.descricao}}</small>
+													</h1>
+												</div>
+												<div class="form-group">
+
+													<h1>
+														<small><i class="{{vm.classeDepartamento}}"></i>&#xA0;&#xA0;&#xA0;&#xA0;{{vm.colaborador.departamento.descricao}}</small>
+													</h1>
+												</div>
+
+												<div class="row">
+													<hr size="80">
+												</div>
+
+												<div class="form-group">
+													{{vm.montarDescricao(vm.colaborador.descricao)}}
+													<h1>
+														<span class="semi-bold"> 
+															<small ng-show="vm.descricaoCurta && mostrarCompleta != true">
+																{{vm.descricaoCurta}}
+																<a href-void class="btn btn-primary btn-xs" ng-click="mostrarCompleta = true">Ver mais</a>
+															</small >
+															<small ng-show="mostrarCompleta || !vm.descricaoCurta">
+																{{vm.descricaoCompleta}}
+															</small >
+														</span>
+													</h1>
+												</div>
+
+												<div class="row">
+													<hr size="80">
+												</div>
+
+												<div class="form-group">
+													<span
+														ng-repeat="competencia in vm.colaborador.competencias">
+														<button class=" btn btn-group btn-default" disabled>
+															{{competencia.descricao}}</button>
+													</span>
+												</div>
+												<br>
+												<div class="form-group">
+													<div ng-repeat="contato in vm.colaborador.contatos">
+														<h1>
+															<small><i
+																class="{{vm.recuperarTipoContato(contato.tipo)}}"></i>&#xA0;&#xA0;
+																{{contato.descricao}}</small>
+														</h1>
+													</div>
+													<br>
+												</div>
+												<div class="form-group" style="height: 400px">
+													<div class="row">
+														<h1>
+															<span class="semi-bold"> <small>{{vm.colaborador.endereco}}
+															</small></span>
+														</h1>
+														<ng-map center="[-15.8005269,-47.8660129]"></ng-map>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+	</form>
+</div>

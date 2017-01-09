@@ -1,0 +1,79 @@
+{
+  "chunks": {
+    "vendor": [
+      "jquery",
+      "jquery-ui",
+      "lodash",
+      "bootstrap",
+      "angular",
+      "angular-sanitize",
+      "angular-animate",
+      "angular-ui-router",
+      "angular-resource",
+      "angular-bootstrap",
+      "fastclick",
+      "AngularJS-Toaster",
+      "angular-modal-service",
+      "angular-cookies",
+      "angular-base64",
+      "autosize",
+      "ngstorage",
+      "angucomplete-ie8",
+      "angular-simple-logger",
+      "angular-google-maps",
+      "ui-select",
+      "ngmap"
+      
+
+    ],
+    "vendor.ui": [
+      "jquery-validation",
+      "jquery-maskedinput",
+      "bootstrap-validator",
+      "jquery-nestable",
+      "jquery-color",
+      "jspdf",
+      "html2canvas",
+      "bootstrap-tagsinput"
+    ],
+    "vendor.datatables": [
+
+
+    ],
+    "vendor.graphs": [
+   
+    ]
+  },
+    "paths": {
+    "angular-google-maps": "node_modules/angular-google-maps/dist/angular-google-maps.min.js",
+    "jquery": "bower_components/jquery/dist/jquery.min.js",
+    "jquery-ui": "bower_components/jquery-ui/jquery-ui.min.js",
+    "bootstrap": "bower_components/bootstrap/dist/js/bootstrap.min.js",
+    "angular": "bower_components/angular/angular.min.js",
+    "angular-resource": "bower_components/angular-resource/angular-resource.min.js",
+    "angular-sanitize": "bower_components/angular-sanitize/angular-sanitize.min.js",
+    "angular-animate": "bower_components/angular-animate/angular-animate.min.js",
+    "angular-ui-router": "bower_components/angular-ui-router/release/angular-ui-router.min.js",
+    "angular-bootstrap": "bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js",
+    "jquery-color": "bower_components/jquery-color/jquery.color.js",
+    "jquery-maskedinput": "bower_components/jquery-maskedinput/dist/jquery.maskedinput.min.js",
+    "jquery-validation": "bower_components/jquery-validation/dist/jquery.validate.min.js",
+    "bootstrap-validator": "bower_components/bootstrapvalidator/dist/js/bootstrapValidator.min.js",
+    "jquery-nestable": "bower_components/jquery-nestable/jquery.nestable.js",
+    "lodash": "bower_components/lodash/lodash.min.js",
+    "AngularJS-Toaster": "bower_components/AngularJS-Toaster/toaster.min.js",
+    "angular-modal-service" : "bower_components/angular-modal-service/dst/angular-modal-service.min.js",
+    "angular-cookies" : "bower_components/angular-cookies/angular-cookies.min.js",
+    "jspdf" : "bower_components/jspdf/dist/jspdf.min.js" ,
+    "fastclick": "bower_components/fastclick/lib/fastclick.js",
+    "angular-base64" : "bower_components/angular-base64/angular-base64.js",
+    "html2canvas"  :"bower_components/html2canvas/build/html2canvas.js",
+    "autosize" : "node_modules/autosize/dist/autosize.min.js",
+    "ngstorage" : "node_modules/ngstorage/ngstorage.min.js",
+    "angucomplete-ie8" : "node_modules/angucomplete-ie8/dist/angucomplete-ie8.min.js",
+    "bootstrap-tagsinput": "bower_components/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js",
+    "angular-simple-logger": "node_modules/angular-simple-logger/dist/angular-simple-logger.min.js",
+    "ui-select" : "bower_components/ui-select/dist/select.min.js",
+    "ngmap" : "bower_components/ngmap/build/scripts/ng-map.min.js"
+  }
+}

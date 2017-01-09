@@ -1,0 +1,10 @@
+{
+  "desenvolvimento": {
+      "CONTEXTO": "/",
+      "URL" : "http://localhost:8080"
+  },
+  "producao": {
+      "CONTEXTO": "/colaborador/",
+       "URL" : ""
+  }
+}

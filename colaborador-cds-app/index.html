@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en-us" class="no-js">
+	<head>
+
+		<meta charset="utf-8">
+		<title ng-controller="LanguagesCtrl">{{getWord('tittleApp')}}</title>
+		<meta name="description" content="">
+		<meta name="author" content="">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" type="text/css" media="screen" href="build/css/bootstrap.min.css">
+
+		<link rel="stylesheet" type="text/css" media="screen" href="build/css/font-awesome.min.css">
+
+		<link rel="stylesheet" type="text/css" media="screen" href="build/css/smartadmin-production-plugins.min.css">
+
+		<link rel="stylesheet" type="text/css" media="screen" href="build/css/smartadmin-production.min.css">
+
+		<link rel="stylesheet" type="text/css" media="screen" href="build/css/smartadmin-skins.min.css">
+
+		<link rel="stylesheet" type="text/css" media="screen" href="build/css/smartadmin-angular.css">
+
+		<link rel="stylesheet" type="text/css" media="screen" href="build/css/smartadmin-rtl.min.css">
+
+		<link rel="stylesheet" type="text/css" media="screen" href="build/css/demo.min.css">
+		
+		<link rel="stylesheet" href="build/css/select.css" />
+
+		<link rel="shortcut icon" href="build/img/favicon/favicon.ico" type="image/x-icon">
+		
+		<link href="build/css/toaster.min.css" rel="stylesheet" />
+		
+		<link href="build/css/mapa.css" rel="stylesheet" />
+
+		<!-- iOS web-app metas : hides Safari UI Components and Changes Status Bar Appearance -->
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+	</head>
+	
+	<body data-smart-device-detect
+		ng-cloak
+		data-smart-fast-click
+		data-smart-layout>
+		
+		<toaster-container></toaster-container>
+
+		<div data-ui-view="root"  data-autoscroll="false" ng-cloak></div>
+
+		<script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyDK0UX0Xmbt-vUdq_zZyaqF8ULp00iB-r0&libraries=places"></script>
+<!-- 		<script src="http://maps.google.com/maps/api/js"></script> -->
+		<script src="build/vendor.js"></script>
+
+		<script src="build/app.js"></script>
+	</body>
+
+</html>
